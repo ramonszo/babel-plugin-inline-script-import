@@ -87,7 +87,7 @@ function babelPluginInlineScriptImport(_ref) {
 
             if(t.isImportNamespaceSpecifier(spec)){
               isWildcard = true;
-            } else if (!t.isImportSpecifier(spec)) {
+            } else if (!t.isImportSpecifier(spec)&&!t.isImportDefaultSpecifier(spec)) {
               return;
             }
 
@@ -96,6 +96,11 @@ function babelPluginInlineScriptImport(_ref) {
               filepath = modulePath;
             } else {
               filepath = _path2.default.join(_path2.default.resolve(fileLocation), '..', modulePath);
+            }
+
+            let defaultSpecifier = false;
+            if(t.isImportDefaultSpecifier(spec)){
+              defaultSpecifier = spec;
             }
 
             const ast = getFile(filepath);
@@ -124,6 +129,10 @@ function babelPluginInlineScriptImport(_ref) {
 
                     if(nameDeclaration==moduleName) {
                       currentExpression = vars.declarations[0].init;
+                    } else if (defaultSpecifier){
+                      if(vars.declarations[0].id.name==defaultSpecifier.local.name) {
+                        currentExpression = vars.declarations[0].init;
+                      }
                     }
 
                     allExports[nameDeclaration] = vars.declarations[0].init;
@@ -163,7 +172,10 @@ function babelPluginInlineScriptImport(_ref) {
 
           if (specificImports.length) {
             path.replaceWithMultiple(specificImports);
+          } else {
+            console.log(node);
           }
+
         }
       }
     }
