@@ -13,7 +13,7 @@ export const foo = {
 };
 ```
 
-The plugin will transform to:
+The plugin will transform:
 
 ```js
 import foo from 'scripts/foo.js';
