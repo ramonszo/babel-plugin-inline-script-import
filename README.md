@@ -55,3 +55,9 @@ Add `babel-plugin-inline-script-import` to the list of plugins. If you are using
 
 ## License
 MIT
+
+---
+
+<a href="https://ramon82.com" target="_blank">
+  <img src="https://utils.ramon82.com/hit.svg?referrer=github.com&title=GitHub%20/%20babel-plugin-inline-script-import&location=https://github.com/ramon82/babel-plugin-inline-script-import" width="24" height="24" />
+</a>
