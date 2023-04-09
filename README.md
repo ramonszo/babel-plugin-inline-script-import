@@ -7,9 +7,9 @@ Given the following module file:
 
 ```js
 export const foo = {
-	doSomething: function(){
-		
-	}
+    doSomething: function(){
+        
+    }
 };
 ```
 
@@ -25,9 +25,9 @@ to:
 
 ```js
 var foo = {
-	doSomething: function(){
+    doSomething: function(){
 
-	}
+    }
 };
 
 foo.doSomething();
@@ -58,6 +58,6 @@ MIT
 
 ---
 
-<a href="https://ramon82.com" target="_blank">
-  <img src="https://utils.ramon82.com/hit.svg?referrer=github.com&title=GitHub%20/%20babel-plugin-inline-script-import&location=https://github.com/ramon82/babel-plugin-inline-script-import" width="24" height="24" />
+<a href="https://ramon.codes" target="_blank">
+  <img src="https://ws.ramon.codes/hit.svg?referrer=github.com&title=GitHub%20/%20babel-plugin-inline-script-import&location=https://github.com/ramonszo/babel-plugin-inline-script-import" width="24" height="24" />
 </a>
